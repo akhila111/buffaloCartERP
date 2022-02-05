@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="buffaloCartERP.LoginTest">
+      <class name="buffaloCartERP.VerifyLogoutTest">
         <methods>
           <include name="closingBrowser"/>
           <include name="openingBrowser"/>
           <include name="afterMethod"/>
-          <include name="verify_login"/>
+          <include name="verifyUserCreation"/>
         </methods>
-      </class> <!-- buffaloCartERP.LoginTest -->
+      </class> <!-- buffaloCartERP.VerifyLogoutTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

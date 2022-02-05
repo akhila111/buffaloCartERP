@@ -1,9 +1,13 @@
 package pages;
 
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginPage 
 {
@@ -22,6 +26,18 @@ public class LoginPage
   {
 	  PageFactory.initElements(driver, this);
 	  this.driver=driver;
+  }
+  
+  public boolean isCurrentPageisLoginPage(String expectedPageTitle)
+  {
+		WebDriverWait wait = new WebDriverWait (driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.visibilityOf(userName_text));
+    	String actualPageTitle=driver.getTitle();
+	  if(actualPageTitle.equals(expectedPageTitle))
+	  {
+		  return true;
+	  }
+	return false; 	  
   }
   
 	public void enter_userName(String username)

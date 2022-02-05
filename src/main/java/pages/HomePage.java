@@ -13,6 +13,9 @@ public class HomePage
 	@FindBy(xpath = "//div[@class='user-block-status']/img")
 	public WebElement logo_image;
 	
+	@FindBy(xpath ="//li[@class='dropdown user user-menu']")
+	public WebElement user_image;
+	
 	@FindBy(xpath="//a[contains(@title,'User')]")
 	public WebElement user_menu;
 	
@@ -31,6 +34,12 @@ public class HomePage
 	{
 	   user_menu.click();	
 	}
+	
+	public void clickOnUserImage()
+	{
+	   user_image.click();	
+	}
+
 
 	public void clickOnMenuWithName(String menuname)
 	{

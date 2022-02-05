@@ -10,8 +10,6 @@ import org.openqa.selenium.support.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import driver.DriverUtils;
 import driver.SeleniumWait;
 
 import java.awt.AWTException;
@@ -133,7 +131,7 @@ public class NewUserPage
 	   public void selectLanguageDropdownValue()
 	   {
 			WebElement element= driver.findElement(By.xpath("//span[@title='English']"));
-			//WebDriverWait wait = new WebDriverWait (driver, Duration.ofSeconds(10));
+			WebDriverWait wait = new WebDriverWait (driver, Duration.ofSeconds(10));
 			SeleniumWait.explicitWait(driver).until(ExpectedConditions.visibilityOf(element));
 			element.click();	   			
 	   }

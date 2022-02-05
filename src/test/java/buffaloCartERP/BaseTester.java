@@ -1,11 +1,8 @@
 package buffaloCartERP;
 
-import java.io.File;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Date;
-
-import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
