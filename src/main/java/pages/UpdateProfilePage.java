@@ -28,7 +28,7 @@ public class UpdateProfilePage {
 	}
 
 	public boolean verifyPhoneNumberUpdated() {
-		if (phoneNumber.equals(MyDetailsPage.getMyPhoneNumber()))
+		if (MyDetailsPage.getUserDetails().contains(phoneNumber))
 			return true;
 
 		return false;

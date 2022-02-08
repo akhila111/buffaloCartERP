@@ -24,7 +24,7 @@ public class VerifyUpdateProfileTest extends BaseTester {
 		upp.clickOnUpdateProfileButton();
 		hp.clickOnUserImage();
 		ump.clickOnMyDetailsLink();
-		MyDetailsPage.getMyPhoneNumber();
+		MyDetailsPage.getUserDetails();
 		Assert.assertTrue(upp.verifyPhoneNumberUpdated(), "Phone number not updated");
 	}
 

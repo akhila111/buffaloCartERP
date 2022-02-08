@@ -8,19 +8,19 @@ import org.openqa.selenium.support.PageFactory;
 public class MyDetailsPage {
 	WebDriver driver;
 
-	public static String phoneNumber_userDetails;
+	public static String userDetails;
 
-	@FindBy(xpath = "//*[@id=\"basic_info\"]/div/div[2]/div[12]/div/p")
-	public static WebElement phoneNumber;
+	@FindBy(xpath = "//*[@id='basic_info']")
+	public static WebElement userdetails_data;
 
 	public MyDetailsPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 		this.driver = driver;
 	}
 
-	public static String getMyPhoneNumber() {
-		phoneNumber_userDetails = phoneNumber.getText();
-		return phoneNumber_userDetails;
+	public static String getUserDetails() {
+		userDetails = userdetails_data.getText();
+		return userDetails;
 	}
 
 }
