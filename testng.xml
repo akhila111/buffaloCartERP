@@ -6,8 +6,8 @@
     <classes>
   <!--<class name="buffaloCartERP.VerifyUserNameInListTest"/>
       <class name="buffaloCartERP.NewBugTest"/>
-      <class name="buffaloCartERP.LoginTest"/>-->
-      <class name="buffaloCartERP.AddNewUserTest"/>
+      <class name="buffaloCartERP.AddNewUserTest"/>-->
+      <class name="buffaloCartERP.LoginTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

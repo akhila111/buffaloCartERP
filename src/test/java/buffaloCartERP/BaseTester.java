@@ -12,38 +12,34 @@ import org.testng.annotations.Parameters;
 
 import driver.DriverFactory;
 import driver.DriverUtils;
+import utils.ReadPropertyFile;
 
-public class BaseTester 
-{
+public class BaseTester {
 	WebDriver driver;
+
 	@Parameters("browser")
 	@BeforeMethod
-	void openingBrowser(@Optional("chrome")String browserName)
-	{
-		driver=DriverFactory.createBrowser(browserName);
+	void openingBrowser(@Optional("chrome") String browserName) {
+		driver = DriverFactory.createBrowser(browserName);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
-		driver=DriverUtils.maximizeWindow(driver);
-		driver.get("https://erp.buffalocart.com/");
+		driver = DriverUtils.maximizeWindow(driver);
+		driver.get(ReadPropertyFile.getURL());
 	}
-	
+
 	@AfterMethod
-	void closingBrowser()
-	{
+	void closingBrowser() {
 		driver.quit();
 	}
-	
+
 	@AfterMethod
-	void afterMethod(ITestResult iTestResult)
-	{
-		String screenshotName=iTestResult.getName()+"_"+String.valueOf(new 
-                SimpleDateFormat("dd.MM.yyyy_HH.mm.ss").format(new Date()));
-		if(iTestResult.getStatus()==2)
-		{
-		  DriverUtils.captureScreenshot(driver, screenshotName+"_failed");
+	void afterMethod(ITestResult iTestResult) {
+		String screenshotName = iTestResult.getName() + "_"
+				+ String.valueOf(new SimpleDateFormat("dd.MM.yyyy_HH.mm.ss").format(new Date()));
+		if (iTestResult.getStatus() == 2) {
+			DriverUtils.captureScreenshot(driver, screenshotName + "_failed");
 		}
-		if(iTestResult.getStatus()==1)
-		{
-			DriverUtils.captureScreenshot(driver, screenshotName+"_passed");
+		if (iTestResult.getStatus() == 1) {
+			DriverUtils.captureScreenshot(driver, screenshotName + "_passed");
 		}
 	}
 }
